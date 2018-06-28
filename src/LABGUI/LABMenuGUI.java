@@ -5,7 +5,10 @@
  */
 package LABGUI;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +22,7 @@ public class LABMenuGUI extends javax.swing.JFrame {
     public LABMenuGUI() {
         initComponents();
         this.setTitle("Turismo IpChile");
-        this.setSize(849, 566);
+        this.setSize(848, 566);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/LABImagenes/icons8-mapamundi-40.png")).getImage());
@@ -35,6 +38,7 @@ public class LABMenuGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -44,6 +48,21 @@ public class LABMenuGUI extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
+
+        jLabel5.setFont(new java.awt.Font("Capture it", 3, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LABImagenes/icons8-github-60.png"))); // NOI18N
+        jLabel5.setText("GitHub");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(380, 460, 60, 80);
 
         jLabel4.setFont(new java.awt.Font("Capture it", 3, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -58,7 +77,7 @@ public class LABMenuGUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(460, 420, 60, 60);
+        jLabel4.setBounds(480, 400, 60, 60);
 
         jLabel3.setFont(new java.awt.Font("Capture it", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -73,7 +92,7 @@ public class LABMenuGUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(310, 420, 70, 60);
+        jLabel3.setBounds(270, 400, 70, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LABImagenes/cooltext290571142135821.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -102,6 +121,25 @@ public class LABMenuGUI extends javax.swing.JFrame {
        menuboleta.setVisible(true);
        dispose();;
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+      
+       
+            if (java.awt.Desktop.isDesktopSupported()) {
+                java.awt.Desktop deskop = java.awt.Desktop.getDesktop();
+                if (deskop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                    try {
+                        java.net.URI uri = new java.net.URI("https://github.com/Bastianxz/labtouripchile");
+                        deskop.browse(uri);
+                    } catch ( URISyntaxException |IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Error al Abrir enlace");
+                    }
+                }
+            }
+                    
+            
+        
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -143,6 +181,7 @@ public class LABMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
